@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 
-const telegramToken = '6935550366:AAFCn08aHQFBQxjQSfYCnbyxyzc5mZCKg9I';
+const telegramToken = '6540362186:AAF0m_P8lI5_GrEU7hbBnnfrA4eDGpNt7BM';
 const cloudflareToken = 'O0JXe_e8AuW2eG9_JGovO8aRJ1xDZeYzYyRDP8sQ';
 
 const bot = new TelegramBot(telegramToken, {
@@ -18,7 +18,7 @@ bot.on('message', async (msg) => {
 
         console.log('User: ' + userMessage);
 
-        const response = await axios.post('https://api.cloudflare.com/client/v4/accounts/d888e02cee618e93b19cd9e7717da715/ai/run/@cf/mistral/mistral-7b-instruct-v0.1', {
+        const response = await axios.post('https://api.cloudflare.com/client/v4/accounts/d888e02cee618e93b19cd9e7717da715/ai/run/@cf/meta/llama-2-7b-chat-int8', {
             prompt: userMessage
         }, {
             headers: {
